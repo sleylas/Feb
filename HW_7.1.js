@@ -4,5 +4,5 @@ let balance = 100;
 let smsCode = "A001DFX0";
 
 if (postalLocker[cell - 1] && smsCode === "A001DFX0") {
-    console.log(`Вы получили посылку из ячейки ${cell}, и ваш счет составляет:... p`);
+    console.log(`Вы получили посылку из ячейки ${cell}, и ваш счет составляет: ${balance-100} p`);
 }
