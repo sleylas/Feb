@@ -1,4 +1,3 @@
-const scorepoints = [];
 const players = [{
         "id": 1,
         "name": "Ivan",
@@ -20,7 +19,20 @@ const players = [{
         "scorePoints": 2356
     },
 ];
-players.forEach(player => {
-    scorepoints.push(player["scorePoints"]);
-});
-console.log(Math.max(...scorepoints))
+
+function calculatePlayersScore(players) {
+    let bestPlayer = {
+        scorePoints: 0,
+    };
+
+    players.forEach(player => {
+        if (player.scorePoints > bestPlayer.scorePoints) {
+            bestPlayer = player;
+        }
+    });
+
+    delete bestPlayer.id;
+    return bestPlayer;
+}
+
+console.log(calculatePlayersScore(players));
